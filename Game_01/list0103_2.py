@@ -9,7 +9,7 @@ def scroll_bg():
     canvas.delete("BG") #먼저 배경 이미지 삭제
     canvas.create_image(x - 240, 150, image=img_bg, tag="BG") #배경 이미지 그리기(왼쪽)
     canvas.create_image(x + 240, 150, image=img_bg, tag="BG") #배경 이미지 그리기(오른쪽)
-    root.after(50, scroll_bg) #50밀리 호 후 함수 재실행
+    root.after(50, scroll_bg) #50밀리 초 후 함수 재실행
 
 root = tkinter.Tk()
 root.title("화면 스크롤")
