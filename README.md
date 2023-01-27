@@ -21,3 +21,14 @@ t = "{0}:{1}:{2}".format(d.hour, d.minute, d.second) #시분초 저장
 ```py
 img_bg = tkinter.PhotoImage(file="Game_01\park.png") #vs code 에선 폴더 경로도 써줘야 한다.
 ```
+4. % 연산자를 이용한 인덱스 선택법
+```py
+#ani 가 0인 경우 계산식은 (0 + 1) % 4는 1이 대입 된다.
+#ani 가 1인 경우 계산식은 (1 + 1) % 4는 2이 대입 된다.
+#ani 가 2인 경우 계산식은 (2 + 1) % 4는 3이 대입 된다.
+#ani 가 3인 경우 계산식은 (3 + 1) % 4는 0이 대입 된다.
+ani = (ani + 1) % 4 
+
+#image=img_dog[ani]를 통해 해당 이미지의 인덱스 값을 넣는다.
+canvas.create_image(240, 200, image=img_dog[ani], tag="BG") 
+```
