@@ -5,11 +5,13 @@
 참고 도서 : 파이썬으로 배우는 게임 개발 실전편   
 목표 : 게임 개발을 하며 개발 스킬을 향상 시킨다.  
 1. bind() 명령으로 얻을 수 있는 주요 이벤트
+```py
 <KeyPress>, <Key> : 키를 누름  
 <KeyRelease> : 키룰 눌렀다 뗌  
 <Motion> : 마우스 포인터 이동  
 <ButtonPress>, <Button> : 마우스 버튼 누름  
 <ButtonRelease> : 마우스 버튼 눌렀다 뗌  
+```
 2. format() 명령 문자열의 {}를 인수 값으로 적용
 ```py
 d = datetime.datetime.now() #현재 시간 저장
