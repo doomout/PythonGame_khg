@@ -5,10 +5,10 @@ root.title("맵 데이터")
 canvas = tkinter.Canvas(width=336, height=240)
 canvas.pack()
 img = [
-    tkinter.PhotoImage(file="Game_01/chip0.png"),
-    tkinter.PhotoImage(file="Game_01/chip1.png"),
-    tkinter.PhotoImage(file="Game_01/chip2.png"),
-    tkinter.PhotoImage(file="Game_01/chip3.png")
+    tkinter.PhotoImage(file="Game_01\img\chip0.png"),
+    tkinter.PhotoImage(file="Game_01\img\chip1.png"),
+    tkinter.PhotoImage(file="Game_01\img\chip2.png"),
+    tkinter.PhotoImage(file="Game_01\img\chip3.png")
 ]
 map_data = [
     [0,1,0,2,2,2,2],

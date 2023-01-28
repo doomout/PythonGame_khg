@@ -18,12 +18,12 @@ root = tkinter.Tk()
 root.title("애니메이션")
 canvas = tkinter.Canvas(width=480, height=300)
 canvas.pack()
-img_bg = tkinter.PhotoImage(file="Game_01\park.png") #배경 이미지 1장
+img_bg = tkinter.PhotoImage(file="Game_01\img\park.png") #배경 이미지 1장
 img_dog = [ #개 이미지 4장
-    tkinter.PhotoImage(file="Game_01\dog0.png"),
-    tkinter.PhotoImage(file="Game_01\dog1.png"),
-    tkinter.PhotoImage(file="Game_01\dog2.png"),
-    tkinter.PhotoImage(file="Game_01\dog3.png")
+    tkinter.PhotoImage(file="Game_01\img\dog0.png"),
+    tkinter.PhotoImage(file="Game_01\img\dog1.png"),
+    tkinter.PhotoImage(file="Game_01\img\dog2.png"),
+    tkinter.PhotoImage(file="Game_01\img\dog3.png")
 ]
 animation()
 root.mainloop()
