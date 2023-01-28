@@ -19,7 +19,7 @@ t = "{0}:{1}:{2}".format(d.hour, d.minute, d.second) #시분초 저장
 ```
 3. tkinter.PhotoImage()를 이용하여 이미지 읽을 때 주의점  
 ```py
-img_bg = tkinter.PhotoImage(file="Game_01\park.png") #vs code 에선 폴더 경로도 써줘야 한다.
+img_bg = tkinter.PhotoImage(file="Game_01\img\park.png") #vs code 에선 폴더 경로도 써줘야 한다.
 ```
 4. % 연산자를 이용한 인덱스 선택법
 ```py
