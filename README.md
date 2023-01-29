@@ -32,3 +32,23 @@ ani = (ani + 1) % 4
 #image=img_dog[ani]를 통해 해당 이미지의 인덱스 값을 넣는다.
 canvas.create_image(240, 200, image=img_dog[ani], tag="BG") 
 ```
+5. 사각형 체크 함수
+```py
+def hit_check_rect():
+    dx = abs((x1 + w1 / 2) - (x2 + w2 / 2)) #두 사각형의 x방향 거리 대입
+    dy = abs((y1 + h1 / 2) - (y2 + h2 / 2)) #두 사각형의 y방향 거리 대입
+    #사각형이 겹치는 조건 판정
+    if dx <= w1 / 2 + w2 / 2 and dy <= h1 / 2 + h2 / 2: 
+        return True
+    return False
+```
+6. 원 체크 함수
+```py
+def hit_check_circle():
+    #두 점 사이 거리를 계산해서 대입
+    dis = math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))
+    #dis 값이 두 원의 반지름의 합 이하라면
+    if dis <= r1 + r2:
+        return True
+    return False
+```
