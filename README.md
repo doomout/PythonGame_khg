@@ -52,3 +52,21 @@ def hit_check_circle():
         return True
     return False
 ```
+7. 버튼에 함수 연결법, 예외 처리법
+```py
+def trigo(): 
+    try: #예외가 발생할 가능성이 있는 코드
+        d=float(entry.get())
+        a=math.radians(d) #라디안 값으로 변환
+        s=math.sin(a)
+        c=math.cos(a)
+        t=math.tan(a)
+        label_s["text"] = "sin " + str(s)
+        label_c["text"] = "cos " + str(c)
+        label_t["text"] = "tan " + str(t)
+    except: #예외가 발생했을 때 실행
+        print("각도를 도 값으로 입력해 주세요.")
+
+#버튼 생성, 버튼 클릭시 실행 함수 지정
+button = tkinter.Button(text="계산",command=trigo) 
+```
