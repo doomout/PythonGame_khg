@@ -32,8 +32,8 @@ def main():
     canvas.create_image(240, bg_pos - 320, image=img_bg, tag="SCREEN")
     canvas.create_image(240, bg_pos + 320, image=img_bg, tag="SCREEN")
     if index == 0:
-        canvas.create_text(240, 240, text="METOR", fill="gold",font=fnt2, tag="SCREEN")
-        canvas.create_text(240, 480, text="Press [SPACE] Key", fill="lime",font=fnt2, tag="SCREEN")
+        canvas.create_text(240, 240, text="METEOR", fill="gold",font=fnt2, tag="SCREEN")
+        canvas.create_text(240, 480, text="Press [SPACE] Key", fill="lime",font=fnt1, tag="SCREEN")
         if key == "space":
             score = 0
             px = 240
@@ -45,11 +45,15 @@ def main():
         move_enemy()
     if index == 2:
         move_enemy()
-        canvas.create_text(240, 30, text="SCORE " + str(score), fill="white", font=fnt1, tag="SCREEN")
-        if koff == True:
-            key = ""
-            koff = False
-        root.after(50, main)
+        canvas.create_text(240,timer * 4, text="GAME OVER", fill="red", font=fnt2, tag="SCREEN")
+        if timer == 60:
+            index = 0
+            timer = 0
+    canvas.create_text(240, 30, text="SCORE " + str(score), fill="white", font=fnt1, tag="SCREEN")
+    if koff == True:
+        key = ""
+        koff = False
+    root.after(50, main)
         
 def hit_check(x1, y1, x2, y2):
     if((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2) < 36 * 36):
@@ -65,7 +69,7 @@ def move_enemy():
     global index, timer
     for i in range(METEO_MAX):
         my[i] = my[i] + 6 + i /5
-        if my > 660:
+        if my[i] > 660:
             mx[i] = random.randrange(0,480)
             my[i] = random.randrange(-640, 0)
         if index == 1 and hit_check(px,py,mx[i], my[i]) == True:
