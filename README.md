@@ -73,3 +73,22 @@ button = tkinter.Button(text="계산",command=trigo)
 8. Pygame 설치시 주의점  
  -현재 pygame는 python 3.11 버전을 지원하지 않기에 pre-release 버전을 설치해야 한다.  
  -명령어 : pip3 install pygame --pre   
+   
+9. Pygame 키 이벤트 함수(화면 크기 전환)
+```py
+ while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_F1: #F1키
+                    screen = pygame.display.set_mode((960, 720), pygame.FULLSCREEN) #전체 화면
+                if event.key == pygame.K_F2 or event.key == pygame.K_ESCAPE: #F2키나 ESC 키
+                    screen = pygame.display.set_mode((960, 720)) #일반 사이즈로 전환
+
+        screen.blit(img_galaxy, [0, 0]) #이미지 그리기
+        pygame.display.update() #화면 업데이트
+        clock.tick(30) #30프레임 마다 반복
+
+```
