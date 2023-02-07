@@ -70,3 +70,6 @@ def trigo():
 #버튼 생성, 버튼 클릭시 실행 함수 지정
 button = tkinter.Button(text="계산",command=trigo) 
 ```
+8. Pygame 설치시 주의점
+ -현재 pygame는 python 3.11 버전을 지원하지 않기에 pre-release 버전을 설치해야 한다.
+ -명령어 : pip3 install pygame --pre  
