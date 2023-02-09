@@ -77,18 +77,31 @@ button = tkinter.Button(text="계산",command=trigo)
 9. Pygame 키 이벤트 함수(화면 크기 전환)
 ```py
  while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_F1: #F1키
-                    screen = pygame.display.set_mode((960, 720), pygame.FULLSCREEN) #전체 화면
-                if event.key == pygame.K_F2 or event.key == pygame.K_ESCAPE: #F2키나 ESC 키
-                    screen = pygame.display.set_mode((960, 720)) #일반 사이즈로 전환
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_F1: #F1키
+                screen = pygame.display.set_mode((960, 720), pygame.FULLSCREEN) #전체 화면
+            if event.key == pygame.K_F2 or event.key == pygame.K_ESCAPE: #F2키나 ESC 키
+                screen = pygame.display.set_mode((960, 720)) #일반 사이즈로 전환
 
-        screen.blit(img_galaxy, [0, 0]) #이미지 그리기
-        pygame.display.update() #화면 업데이트
-        clock.tick(30) #30프레임 마다 반복
+    screen.blit(img_galaxy, [0, 0]) #이미지 그리기
+    pygame.display.update() #화면 업데이트
+    clock.tick(30) #30프레임 마다 반복
+```
+10. 이미지 회전 함수
+```py
+while True:
+    screen.blit(img_galaxy, [0, 0]) #별 이미지(배경) 그리기
 
+    ang = (ang + 1) % 360 #회전 각도 증가
+    img_rz = pygame.transform.rotozoom(img_sship, ang, 1.0) #회전한 우주선 이미지 생성
+    x = 480 - img_rz.get_width() / 2 #x 좌표 계산
+    y = 360 - img_rz.get_height() / 2 #y 좌표 계산
+    screen.blit(img_rz, [x, y]) #회전할 우주선 이미지 그리기
+
+    pygame.display.update() #화면 업데이트
+    clock.tick(30) #30프레임씩 반복
 ```
